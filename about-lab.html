@@ -5,101 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- favicon 설정 -->
     <link rel="shortcut icon" href="INHA_BASIC.png" type="image/png">
     <link rel="icon" href="INHA_BASIC.png" type="image/png">
     
+    <!-- 스타일시트 불러오기 -->
     <link rel="stylesheet" href="https://use.typekit.net/lmb3xcb.css">
     <link rel="stylesheet" href="https://gsds.snu.ac.kr/wp-content/themes/gsds/public/index.css?v=1725787018">
-
-    <!-- 제목 -->
-    <title>연구실 소개 &#8211; INHA University Logistics Optimization LAB</title>
-
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            background-color: #f8f8f8;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .sub-menu {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-
-        .sub-menu a {
-            text-decoration: none;
-            color: #000;
-            font-size: 18px;
-        }
-
-        .sub-menu a:hover {
-            text-decoration: underline;
-        }
-
-        .selected {
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .content h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .graph {
-            margin: 50px auto;
-        }
-
-        .graph img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+    
+    <title>연구실 소개 &#8211; Inha University Logistics Optimization LAB</title>
 </head>
 
 <body>
-
-    <header>
-        <h1>About</h1>
-        <div class="sub-menu">
-            <a href="about-lab.html" class="selected">연구실 소개</a>
-            <a href="location.html">오시는 길</a>
+    <!-- 상단 메뉴바 -->
+    <header class="site-header text-dark" id="header">
+        <div class="header-main header-contents no-center">
+            <div class="container">
+                <div class="header-left-items header-items">
+                    <div class="site-branding">
+                        <a href="index.html" class="logo">
+                            <img src="INHA_BASIC.png" class="logo-dark">
+                            <img src="INHA_BASIC.png" class="logo-light">
+                            <span>Inha University <br>Logistics Optimization LAB</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="header-right-items header-items">
+                    <nav id="primary-menu" class="main-navigation">
+                        <ul id="menu-primary-menu" class="menu nav-menu">
+                            <li class="menu-item"><a href="about-lab.html" class="primary-menu-link">About</a></li>
+                            <li class="menu-item"><a href="people.html" class="primary-menu-link">People</a></li>
+                            <li class="menu-item"><a href="research.html" class="primary-menu-link">Research</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="content">
-        <h2>연구실 소개</h2>
-        <p>우리 연구실은 물류 최적화 및 혁신적인 물류 솔루션을 연구하며, 첨단 기술을 바탕으로 새로운 물류 패러다임을 제시하고 있습니다. 다학제적 접근을 통해 다양한 분야와 협력하며, 실제 문제 해결에 중점을 두고 있습니다.</p>
-        <p>대량의 데이터를 효과적으로 관리하고 분석할 수 있는 방법을 연구하며, 인공지능과 머신러닝을 활용해 물류 시스템의 효율성을 극대화하는 데 초점을 맞추고 있습니다.</p>
-        
-        <div class="graph">
-            <img src="your-graph-image.png" alt="Research Graph">
-        </div>
+    <!-- 본문 내용 -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="desc">
+                            <h1>About</h1>
+                            <h2>연구실 소개</h2>
+                            <p>
+                                우리 연구실은 물류 최적화를 연구합니다. 프로그래밍 언어를 기반으로 학술적, 산업적으로 효용을 갖는 알고리즘을 개발하는 것을 목표로 합니다. 대학교 및 산업 파트너와 협력하여 실제 문제 해결에 중점을 두고 있습니다.
+                            </p>
+                            <img src="research-graph.png" alt="Research Graph">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- 하단 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-gl-12">
+                    <div class="site-branding">
+                        <a href="index.html" class="logo">
+                            <img src="INHA_BASIC.png" class="logo-dark">
+                            <img src="INHA_BASIC.png" class="logo-light">
+                            <span>Inha University <br>Logistics Optimization LAB</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-menu">
+                        <ul id="menu-all-menu" class="menu">
+                            <li class="menu-item"><a href="about-lab.html">About</a></li>
+                            <li class="menu-item"><a href="people.html">People</a></li>
+                            <li class="menu-item"><a href="research.html">Research</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="footer-copyright">
+                    <p>Logistics LAB © 2024. All rights reserved.
+                        <a href="#" target="_blank">개인정보처리방침</a>
+                        <a href="#" target="_blank">영상정보처리기기 운영 • 관리 방침</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <ul class="footer-social">
+                    <li><a href="#" target="_blank"><img src="https://gsds.snu.ac.kr/wp-content/themes/gsds/resources/images/ic-linkedin.svg" class="social-dark"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://gsds.snu.ac.kr/wp-content/themes/gsds/resources/vendors/jquery/jquery-3.5.1.min.js"></script>
+    <script src="https://gsds.snu.ac.kr/wp-content/themes/gsds/resources/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://gsds.snu.ac.kr/wp-content/themes/gsds/public/index.js?v=1725787018"></script>
 </body>
 
 </html>
