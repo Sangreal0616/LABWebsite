@@ -18,13 +18,14 @@
 
     <style>
         /* 배경 이미지를 설정 */
-        .hero {
+        body {
             background-image: url('network.jpg'); /* 이미지 파일 경로 */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding: 150px 0; /* 화면에 맞춰 높이를 조정 */
             color: white; /* 텍스트 색상 */
+            min-height: 100vh;
+            margin: 0;
         }
 
         /* 기본 네비게이션 스타일 */
@@ -76,10 +77,17 @@
         .menu-item > a {
             cursor: pointer;
         }
+
+        /* 푸터 스타일 - 푸터에는 배경을 적용하지 않음 */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
     </style>
 </head>
 
-<body class="home page-template page-template-views page-template-home page-template-viewshome-php page page-id-8 wp-embed-responsive is-loading">
+<body>
     <header class="site-header text-dark" id="header">
         <div class="header-main header-contents no-center">
             <div class="container">
