@@ -63,6 +63,24 @@
         footer {
             margin-top: 50px;
         }
+
+        .footer-menu ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-menu ul li {
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .footer-menu ul li a {
+            text-decoration: none;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -95,19 +113,30 @@
 
     <!-- 본문 내용 -->
     <div class="contact-info">
-        <p>전화: 032-860-8238</p>
-        <p>위치: 6-305</p>
+        <p>전화 : 032-860-8238</p>
+        <p>위치 : 6-305</p>
     </div>
+    
     <div class="map-section">
         <img src="INHAMAP.jpg" alt="Inha University Map">
     </div>
 
-    <!-- 하단 메뉴바 -->
+<!-- 하단 푸터 -->
     <footer>
         <div class="container">
-            <nav id="footer-menu" class="main-navigation">
-                <ul class="menu nav-menu">
-                    <li><a href="index.html" class="primary-menu-link">Home</a></li>
-                    <li><a href="about-lab.html" class="primary-menu-link">About</a></li>
-                    <li><a href="people.html" class="primary-menu-link">People</a></li>
-                    <li><a href="research.html
+            <div class="footer-menu">
+                <ul>
+                    <li><a href="about-lab.html">연구실 소개</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="location.html">오시는 길</a></li>
+                    <li><a href="donate.html">기부하기</a></li>
+                </ul>
+            </div>
+            <div class="footer-copyright">
+                <p>Inha University © 2024. All rights reserved. <a href="#">개인정보처리방침</a> <a href="#">영상정보처리기기 운영 관리 방침</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
