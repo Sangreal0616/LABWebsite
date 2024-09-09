@@ -42,23 +42,26 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #333;
+            background-color: white; /* 하위 메뉴 배경색을 흰색으로 설정 */
             padding: 0;
             list-style-type: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+            border-radius: 5px; /* 선택 사항: 모서리를 둥글게 */
         }
-
-        .sub-menu li {
-            width: 150px;
-        }
-
+        
         .sub-menu a {
+            color: black; /* 하위 메뉴 항목 텍스트 색상을 검정으로 설정 */
             padding: 10px;
         }
-
-        /* 커서를 올렸을 때 하위 메뉴 표시 */
+        
         .menu-item:hover .sub-menu {
             display: block;
         }
+        
+        .menu-item:hover a {
+            background-color: #444; /* 상위 메뉴에 커서를 올렸을 때 색상 변경 */
+        }
+
 
         /* 하위 메뉴 스타일 */
         .menu-item:hover a {
