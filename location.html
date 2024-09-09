@@ -15,55 +15,62 @@
     <link rel="stylesheet" href="https://gsds.snu.ac.kr/wp-content/themes/gsds/public/index.css?v=1725787018">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
 
-    <style>
-        /* 하위 메뉴 숨기기 설정 */
-        .menu .sub-menu {
-            display: none;
-            position: absolute;
-            background-color: white;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            list-style-type: none;
-            padding: 10px;
-        }
+   <style>
+    /* 하위 메뉴 숨기기 설정 */
+    .menu .sub-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        list-style-type: none;
+        padding: 10px;
+    }
 
-        .menu li:hover .sub-menu {
-            display: block;
-        }
+    .menu li:hover .sub-menu {
+        display: block;
+    }
 
-        .menu .sub-menu li {
-            padding: 5px 10px;
-        }
+    .menu .sub-menu li {
+        padding: 5px 10px;
+    }
 
-        .menu .sub-menu li a {
-            color: black;
-            text-decoration: none;
-        }
+    .menu .sub-menu li a {
+        color: black;
+        text-decoration: none;
+    }
 
-        .menu .sub-menu li a:hover {
-            background-color: #f0f0f0;
-        }
+    .menu .sub-menu li a:hover {
+        background-color: #f0f0f0;
+    }
 
-        /* 중앙에 텍스트 및 이미지 정렬 */
-        .map-section {
-            text-align: center;
-            margin: 1000px auto; /* 상단과 하단에 여백 추가 */
-            max-width: 800px; /* 페이지 내에서 이미지 크기 제한 */
-        }
+    /* 중앙에 텍스트 및 이미지 정렬 */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* 화면 높이에 맞추기 */
+        margin-top: 100px; /* 상단 메뉴바와 간격을 두기 위해 추가 */
+        text-align: center;
+    }
 
-        .map-section img {
-            width: 100%; /* 이미지가 페이지 너비의 100%를 차지 */
-            height: auto; /* 비율을 유지하며 크기 조정 */
-        }
+    .contact-info {
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
 
-        .contact-info {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 40px; /* 텍스트와 이미지 사이의 간격을 조정 */
-            max-width: 800px; /* 텍스트 너비 제한 */
-            margin: 0 auto; /* 중앙 정렬 */
-        }
-    </style>
+    .map-section {
+        max-width: 800px; /* 이미지 크기 제한 */
+        margin: 0 auto;
+    }
+
+    .map-section img {
+        width: 100%;
+        height: auto;
+    }
+</style>
 
     <title>오시는 길 &#8211; Inha University Logistics Optimization LAB</title>
 </head>
