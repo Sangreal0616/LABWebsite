@@ -15,6 +15,61 @@
     
     <!-- 제목 변경 -->
     <title>Logistics Optimization LAB &#8211; INHA University Graduate School of Logistics</title>
+
+    <style>
+        /* 기본 네비게이션 스타일 */
+        .nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            color: #fff;
+        }
+
+        /* 하위 메뉴 숨김 */
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .sub-menu li {
+            width: 150px;
+        }
+
+        .sub-menu a {
+            padding: 10px;
+        }
+
+        /* 커서를 올렸을 때 하위 메뉴 표시 */
+        .menu-item:hover .sub-menu {
+            display: block;
+        }
+
+        /* 하위 메뉴 스타일 */
+        .menu-item:hover a {
+            background-color: #444;
+        }
+
+        /* 상위 메뉴 클릭 시 첫 번째 항목으로 이동 */
+        .menu-item > a {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="home page-template page-template-views page-template-home page-template-viewshome-php page page-id-8 wp-embed-responsive is-loading">
@@ -34,21 +89,21 @@
                     <nav id="primary-menu" class="main-navigation">
                         <ul id="menu-primary-menu" class="menu nav-menu">
                             <!-- About 메뉴 -->
-                            <li class="menu-item menu-item-has-children">
-                                <a href="#" class="primary-menu-link">About</a>
+                            <li class="menu-item">
+                                <a href="about-lab.html" class="primary-menu-link">About</a>
                                 <ul class="sub-menu">
-                                    <li><a href="about-lab.html" class="primary-menu-link">연구실 소개</a></li>
-                                    <li><a href="location.html" class="primary-menu-link">오시는 길</a></li>
+                                    <li><a href="about-lab.html">연구실 소개</a></li>
+                                    <li><a href="location.html">오시는 길</a></li>
                                 </ul>
                             </li>
                             <!-- People 메뉴 -->
-                            <li class="menu-item menu-item-has-children">
-                                <a href="#" class="primary-menu-link">People</a>
+                            <li class="menu-item">
+                                <a href="faculty.html" class="primary-menu-link">People</a>
                                 <ul class="sub-menu">
-                                    <li><a href="faculty.html" class="primary-menu-link">교수</a></li>
-                                    <li><a href="graduate-students.html" class="primary-menu-link">대학원생</a></li>
-                                    <li><a href="researchers.html" class="primary-menu-link">연구원</a></li>
-                                    <li><a href="undergraduate-researchers.html" class="primary-menu-link">학부연구생</a></li>
+                                    <li><a href="faculty.html">교수</a></li>
+                                    <li><a href="graduate-students.html">대학원생</a></li>
+                                    <li><a href="researchers.html">연구원</a></li>
+                                    <li><a href="undergraduate-researchers.html">학부연구생</a></li>
                                 </ul>
                             </li>
                             <!-- Research 메뉴 -->
