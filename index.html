@@ -1,0 +1,353 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INHA UNIVERSITY Logistics Optimization LAB</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #0a1e2e;
+            color: white;
+            overflow: hidden;
+        }
+        #network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(10, 30, 46, 0.8);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0a1e2e;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            padding: 100px 50px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .learn-more {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #0a1e2e;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <svg id="network-bg"></svg>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="INHA_BASIC.png" alt="INHA University Logo">
+            <div class="logo-text">INHA UNIVERSITY Logistics Optimization LAB</div>
+        </a>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="about.html">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">연구실 소개</a>
+                        <a href="location.html">오시는 길</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="professors.html">People</a>
+                    <div class="dropdown-content">
+                        <a href="professors.html">교수</a>
+                        <a href="graduate.html">대학원생</a>
+                        <a href="alumni.html">졸업생</a>
+                        <a href="researchers.html">연구원</a>
+                        <a href="undergraduate.html">학부연구생</a>
+                    </div>
+                </li>
+                <li><a href="research.html">Research</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>INHA UNIVERSITY<br>Logistics Optimization LAB</h1>
+        <p>We research and develop innovative technology, educate the next generation of logistics experts, and cultivate multidisciplinary collaboration.</p>
+        <a href="about.html" class="learn-more">LEARN MORE</a>
+    </div>
+
+    <script>
+        const svg = document.getElementById('network-bg');
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        svg.setAttribute('width', width);
+        svg.setAttribute('height', height);
+
+        const numNodes = 200;
+        const nodes = [];
+        const links = [];
+
+        for (let i = 0; i < numNodes; i++) {
+            nodes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5
+            });
+        }
+
+        for (let i = 0; i < numNodes; i++) {
+            for (let j = i + 1; j < numNodes; j++) {
+                if (Math.random() < 0.03) {
+                    links.push({source: i, target: j});
+                }
+            }
+        }
+
+        links.forEach(link => {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('stroke', '#4a90e2');
+            line.setAttribute('stroke-width', '0.5');
+            line.setAttribute('opacity', '0.3');
+            svg.appendChild(line);
+        });
+
+        nodes.forEach(node => {
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('r', '1.5');
+            circle.setAttribute('fill', '#4a90e2');
+            svg.appendChild(circle);
+        });
+
+        function animate() {
+            nodes.forEach(node => {
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > width) node.vx *= -1;
+                if (node.y < 0 || node.y > height) node.vy *= -1;
+            });
+
+            links.forEach((link, i) => {
+                const line = svg.children[i];
+                line.setAttribute('x1', nodes[link.source].x);
+                line.setAttribute('y1', nodes[link.source].y);
+                line.setAttribute('x2', nodes[link.target].x);
+                line.setAttribute('y2', nodes[link.target].y);
+            });
+
+            nodes.forEach((node, i) => {
+                const circle = svg.children[links.length + i];
+                circle.setAttribute('cx', node.x);
+                circle.setAttribute('cy', node.y);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INHA UNIVERSITY Logistics Optimization LAB</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #0a1e2e;
+            color: white;
+            overflow: hidden;
+        }
+        #network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(10, 30, 46, 0.8);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0a1e2e;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            padding: 100px 50px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .learn-more {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #0a1e2e;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <video id="network-bg" playsinline="playsinline" webkit-playsinline="" autoplay="autoplay" muted="muted" loop="loop" poster="">
+        <source src="https://gsds.snu.ac.kr/wp-content/uploads/2023/03/Sequence-013.mp4" type="video/mp4">
+    </video>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="INHA_BASIC.png" alt="INHA University Logo">
+            <div class="logo-text">INHA UNIVERSITY Logistics Optimization LAB</div>
+        </a>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="about.html">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">연구실 소개</a>
+                        <a href="location.html">오시는 길</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="professors.html">People</a>
+                    <div class="dropdown-content">
+                        <a href="professors.html">교수</a>
+                        <a href="graduate.html">대학원생</a>
+                        <a href="alumni.html">졸업생</a>
+                        <a href="researchers.html">연구원</a>
+                        <a href="undergraduate.html">학부연구생</a>
+                    </div>
+                </li>
+                <li><a href="research.html">Research</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>INHA UNIVERSITY<br>Logistics Optimization LAB</h1>
+        <p>We research and develop innovative technology, educate the next generation of logistics experts, and cultivate multidisciplinary collaboration.</p>
+        <a href="about.html" class="learn-more">LEARN MORE</a>
+    </div>
+</body>
+</html>
